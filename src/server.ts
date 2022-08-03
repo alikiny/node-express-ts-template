@@ -8,7 +8,7 @@ import StatusCodes from 'http-status-codes';
 import 'express-async-errors';
 
 import logger from 'jet-logger';
-import { CustomError } from 'src/errors/errors';
+import { CustomError } from './errors/errors';
 
 dotenv.config()
 const app = express();
