@@ -9,6 +9,7 @@ import 'express-async-errors';
 
 import logger from 'jet-logger';
 import { CustomError } from './errors/errors';
+import studentRoute from './routes/studentRoute';
 
 dotenv.config()
 const app = express();
@@ -27,6 +28,9 @@ if (process.env.NODE_ENV === 'development') {
 if (process.env.NODE_ENV === 'production') {
     app.use(helmet());
 }
+
+//add main routes
+app.use('/students', studentRoute)
 
 // Error handler
 app.use((err: Error | CustomError, _: Request, res: Response, __: NextFunction) => {
